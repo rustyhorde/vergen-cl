@@ -6,5 +6,8 @@ pub fn main() -> Result<()> {
         .all_build()
         .all_cargo()
         .all_git()
+        .all_rustc()
+        .all_sysinfo()
+        .fail_on_error()
         .emit()
 }
