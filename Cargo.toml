@@ -15,7 +15,7 @@ vergen = { version = "8.2.9", default-features = false, features = [
     "build",
     "cargo",
     "git",
-    "gitcl",
+    "gitoxide",
     "rustc",
     "si"
 ] }
