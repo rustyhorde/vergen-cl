@@ -7,11 +7,11 @@ edition = "2021"
 
 [dependencies]
 anyhow = "1.0.79"
-vergen-pretty = "0.3.0"
+vergen-pretty = { version = "0.3.1", features = ["color"] }
 
 [build-dependencies]
 anyhow = "1.0.79"
-vergen = { version = "8.2.9", default-features = false, features = [
+vergen = { version = "8.2.10", default-features = false, features = [
     "build",
     "cargo",
     "git",
