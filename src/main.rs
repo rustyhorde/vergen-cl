@@ -4,7 +4,7 @@ use vergen_pretty::{vergen_pretty_env, PrettyBuilder};
 fn main() -> Result<()> {
     let mut stdout = vec![];
     PrettyBuilder::default()
-        .env(vergen_pretty_env!())
+        .env(vergen_pretty_env!("vergen-cl"))
         .build()?
         .display(&mut stdout)?;
     println!("{}", String::from_utf8_lossy(&stdout));
