@@ -1073,9 +1073,9 @@ dependencies = [
 
 [[package]]
 name = "rustix"
-version = "0.38.30"
+version = "0.38.31"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "322394588aaf33c24007e8bb3238ee3e4c5c09c084ab32bc73890b99ff326bca"
+checksum = "6ea3e1a662af26cd7a3ba09c0297a31af215563ecf42817c98df621387f4e949"
 dependencies = [
  "bitflags 2.4.2",
  "errno",
@@ -1357,7 +1357,7 @@ dependencies = [
 
 [[package]]
 name = "vergen"
-version = "9.0.0-beta.1"
+version = "9.0.0-beta.2"
 dependencies = [
  "anyhow",
  "cargo_metadata",
@@ -1382,7 +1382,7 @@ dependencies = [
 
 [[package]]
 name = "vergen-gix"
-version = "1.0.0-beta.1"
+version = "1.0.0-beta.2"
 dependencies = [
  "anyhow",
  "derive_builder",
@@ -1395,7 +1395,7 @@ dependencies = [
 
 [[package]]
 name = "vergen-lib"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "anyhow",
  "derive_builder",
@@ -1405,7 +1405,7 @@ dependencies = [
 
 [[package]]
 name = "vergen-pretty"
-version = "0.3.2"
+version = "0.3.3"
 dependencies = [
  "anyhow",
  "console",
