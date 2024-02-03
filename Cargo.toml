@@ -7,17 +7,13 @@ edition = "2021"
 
 [dependencies]
 anyhow = "1.0.79"
-vergen-pretty = { version = "0.3.2", features = ["color"] }
+vergen-pretty = { version = "0.3.3", features = ["color"] }
 
 [build-dependencies]
 anyhow = "1.0.79"
-vergen-gix = { version = "1.0.0-beta.1", default-features = false, features = [
+vergen-gix = { version = "1.0.0-beta.2", default-features = false, features = [
     "build",
     "cargo",
     "rustc",
     "si"
 ] }
-
-[patch.crates-io]
-vergen-gix = { path = "../vergen/vergen-gix" }
-vergen-pretty = { path = "../vergen/vergen-pretty" }
