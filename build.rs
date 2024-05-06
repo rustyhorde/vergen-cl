@@ -7,6 +7,12 @@ use vergen_gix::{
 };
 
 pub fn main() -> Result<()> {
+    println!("cargo:rerun-if-changed=build.rs");
+    println!("cargo:rustc-check-cfg=cfg(coverage_nightly)");
+    nightly();
+    beta();
+    stable();
+
     let mut cargo = CargoBuilder::all_cargo()?;
     _ = cargo.set_dep_kind_filter(Some(DependencyKind::Normal));
 
@@ -18,6 +24,39 @@ pub fn main() -> Result<()> {
         .add_instructions(&SysinfoBuilder::all_sysinfo()?)?
         .add_custom_instructions(&Custom::default())?
         .emit()
+}
+
+#[rustversion::nightly]
+fn nightly() {
+    println!("cargo:rustc-check-cfg=cfg(nightly)");
+    println!("cargo:rustc-cfg=nightly");
+}
+
+#[rustversion::not(nightly)]
+fn nightly() {
+    println!("cargo:rustc-check-cfg=cfg(nightly)");
+}
+
+#[rustversion::beta]
+fn beta() {
+    println!("cargo:rustc-check-cfg=cfg(beta)");
+    println!("cargo:rustc-cfg=beta");
+}
+
+#[rustversion::not(beta)]
+fn beta() {
+    println!("cargo:rustc-check-cfg=cfg(beta)");
+}
+
+#[rustversion::stable]
+fn stable() {
+    println!("cargo:rustc-check-cfg=cfg(stable)");
+    println!("cargo:rustc-cfg=stable");
+}
+
+#[rustversion::not(stable)]
+fn stable() {
+    println!("cargo:rustc-check-cfg=cfg(stable)");
 }
 
 #[derive(Default)]
