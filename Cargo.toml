@@ -9,13 +9,13 @@ edition = "2021"
 unstable = []
 
 [dependencies]
-anyhow = "1.0.97"
+anyhow = "1.0.98"
 vergen-pretty = { version = "1.0.1", features = ["color"] }
 
 [build-dependencies]
-anyhow = "1.0.97"
+anyhow = "1.0.98"
 rustversion = "1.0.20"
-vergen-gix = { version = "1.0.8", default-features = false, features = [
+vergen-gix = { version = "1.0.9", default-features = false, features = [
     "build",
     "cargo",
     "rustc",
