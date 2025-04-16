@@ -238,7 +238,7 @@
 #![cfg_attr(coverage_nightly, feature(coverage_attribute))]
 
 use anyhow::Result;
-use vergen_pretty::{vergen_pretty_env, PrettyBuilder};
+use vergen_pretty::{PrettyBuilder, vergen_pretty_env};
 
 fn main() -> Result<()> {
     let mut stdout = vec![];
