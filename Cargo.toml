@@ -9,12 +9,12 @@ edition = "2024"
 unstable = []
 
 [dependencies]
-anyhow = "1.0.98"
-vergen-pretty = { version = "1.0.1", features = ["color"] }
+anyhow = "1.0.99"
+vergen-pretty = { version = "1.0.2", features = ["color"] }
 
 [build-dependencies]
-anyhow = "1.0.98"
-rustversion = "1.0.20"
+anyhow = "1.0.99"
+rustversion = "1.0.22"
 vergen-gix = { version = "1.0.9", default-features = false, features = [
     "build",
     "cargo",

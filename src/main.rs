@@ -235,13 +235,13 @@
 #![cfg_attr(coverage_nightly, feature(coverage_attribute))]
 
 use anyhow::Result;
-use vergen_pretty::{PrettyBuilder, vergen_pretty_env};
+use vergen_pretty::{Pretty, vergen_pretty_env};
 
 fn main() -> Result<()> {
     let mut stdout = vec![];
-    PrettyBuilder::default()
+    Pretty::builder()
         .env(vergen_pretty_env!("vergen-cl"))
-        .build()?
+        .build()
         .display(&mut stdout)?;
     println!("{}", String::from_utf8_lossy(&stdout));
     Ok(())
