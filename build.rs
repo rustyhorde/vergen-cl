@@ -2,8 +2,8 @@ use std::collections::BTreeMap;
 
 use anyhow::Result;
 use vergen_gix::{
-    AddCustomEntries, BuildBuilder, CargoBuilder, CargoRerunIfChanged, CargoWarning, DefaultConfig,
-    DependencyKind, Emitter, GixBuilder, RustcBuilder, SysinfoBuilder,
+    AddCustomEntries, Build, Cargo, CargoRerunIfChanged, CargoWarning, DefaultConfig,
+    DependencyKind, Emitter, Gix, Rustc, Sysinfo,
 };
 
 pub fn main() -> Result<()> {
@@ -13,15 +13,15 @@ pub fn main() -> Result<()> {
     beta();
     stable();
 
-    let mut cargo = CargoBuilder::all_cargo()?;
+    let mut cargo = Cargo::all_cargo();
     _ = cargo.set_dep_kind_filter(Some(DependencyKind::Normal));
 
     Emitter::default()
-        .add_instructions(&BuildBuilder::all_build()?)?
+        .add_instructions(&Build::all_build())?
         .add_instructions(&cargo)?
-        .add_instructions(&GixBuilder::all_git()?)?
-        .add_instructions(&RustcBuilder::all_rustc()?)?
-        .add_instructions(&SysinfoBuilder::all_sysinfo()?)?
+        .add_instructions(&Gix::all_git())?
+        .add_instructions(&Rustc::all_rustc())?
+        .add_instructions(&Sysinfo::all_sysinfo())?
         .add_custom_instructions(&Custom::default())?
         .emit()
 }
