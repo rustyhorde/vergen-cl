@@ -10,7 +10,7 @@ unstable = []
 
 [dependencies]
 anyhow = "1.0.99"
-vergen-pretty = { version = "1.0.2", features = ["color"] }
+vergen-pretty = { version = "2.0.0", features = ["color"] }
 
 [build-dependencies]
 anyhow = "1.0.99"
