@@ -1,31 +1,16 @@
-[package]
-authors = ["Jason Ozias <jason.g.ozias@gmail.com>"]
-categories = ["development-tools", "development-tools::build-utils"]
-description = "A demo of the capabilities of the `vergen-gix` build tool"
-documentation = "https://docs.rs/vergen-cl"
-edition = "2024"
-homepage = "https://github.com/rustyhorde/vergen-cl"
-keywords = ["cargo", "instructions", "build", "tool"]
-license = "MIT OR Apache-2.0"
-name = "vergen-cl"
-readme = "README.md"
-repository = "https://github.com/rustyhorde/vergen-cl"
-version = "0.2.0"
+[workspace]
+resolver = "3"
 
-[features]
-unstable = []
+members = [
+    "vergen-git2-demo",
+    "vergen-gitcl-demo",
+    "vergen-gix-demo",
+]
 
-[dependencies]
-anyhow = "1.0.99"
-vergen-pretty = { version = "2.0.0", features = ["color"] }
-
-[build-dependencies]
+[workspace.dependencies]
 anyhow = "1.0.99"
 rustversion = "1.0.22"
-vergen-gix = { version = "2.0.0-beta.1", features = [
-    "build",
-    "cargo",
-    "cargo_metadata",
-    "rustc",
-    "si",
-] }
+vergen-pretty = { version = "2.0.0", features = ["color"] }
+
+[patch.crates-io]
+vergen-gix = { path = "../vergen/vergen-gix" }

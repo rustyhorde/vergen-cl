@@ -1,0 +1,31 @@
+[package]
+authors = ["Jason Ozias <jason.g.ozias@gmail.com>"]
+categories = ["development-tools", "development-tools::build-utils"]
+description = "A demo of the capabilities of the `vergen-gix` build tool"
+documentation = "https://docs.rs/vergen-cl"
+edition = "2024"
+homepage = "https://github.com/rustyhorde/vergen-cl"
+keywords = ["cargo", "instructions", "build", "tool"]
+license = "MIT OR Apache-2.0"
+name = "vergen-gitcl-demo"
+readme = "README.md"
+repository = "https://github.com/rustyhorde/vergen-cl"
+version = "0.3.0"
+
+[features]
+unstable = []
+
+[dependencies]
+anyhow = { workspace = true }
+vergen-pretty = { workspace = true }
+
+[build-dependencies]
+anyhow = { workspace = true }
+rustversion = { workspace = true }
+vergen-gitcl = { version = "2.0.0-beta.1", features = [
+    "build",
+    "cargo",
+    "cargo_metadata",
+    "rustc",
+    "si",
+] }
