@@ -1,9 +1,16 @@
 [package]
-name = "vergen-cl"
-version = "0.1.0"
+authors = ["Jason Ozias <jason.g.ozias@gmail.com>"]
+categories = ["development-tools", "development-tools::build-utils"]
+description = "A demo of the capabilities of the `vergen-gix` build tool"
+documentation = "https://docs.rs/vergen-cl"
 edition = "2024"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+homepage = "https://github.com/rustyhorde/vergen-cl"
+keywords = ["cargo", "instructions", "build", "tool"]
+license = "MIT OR Apache-2.0"
+name = "vergen-cl"
+readme = "README.md"
+repository = "https://github.com/rustyhorde/vergen-cl"
+version = "0.1.0"
 
 [features]
 unstable = []
@@ -19,5 +26,5 @@ vergen-gix = { version = "1.0.9", default-features = false, features = [
     "build",
     "cargo",
     "rustc",
-    "si"
+    "si",
 ] }
