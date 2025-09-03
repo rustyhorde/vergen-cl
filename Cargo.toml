@@ -10,7 +10,7 @@ license = "MIT OR Apache-2.0"
 name = "vergen-cl"
 readme = "README.md"
 repository = "https://github.com/rustyhorde/vergen-cl"
-version = "0.1.0"
+version = "0.2.0"
 
 [features]
 unstable = []
@@ -22,9 +22,10 @@ vergen-pretty = { version = "2.0.0", features = ["color"] }
 [build-dependencies]
 anyhow = "1.0.99"
 rustversion = "1.0.22"
-vergen-gix = { version = "1.0.9", default-features = false, features = [
+vergen-gix = { version = "2.0.0-beta.1", features = [
     "build",
     "cargo",
+    "cargo_metadata",
     "rustc",
     "si",
 ] }
