@@ -22,6 +22,7 @@ pub fn main() -> Result<()> {
     let gix = Gix::all()
         .repo_path(blah)
         .remote_url("https://github.com/rustyhorde/vergen-cl.git")
+        .describe(true, true, None)
         .build();
 
     Emitter::default()
