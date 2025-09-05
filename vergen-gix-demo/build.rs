@@ -17,6 +17,7 @@ pub fn main() -> Result<()> {
     _ = cargo.set_dep_kind_filter(Some(DependencyKind::Normal));
 
     let gix = Gix::all()
+        .force_local(false)
         .remote_url("https://github.com/rustyhorde/vergen-cl.git")
         .describe(true, true, None)
         .build();
