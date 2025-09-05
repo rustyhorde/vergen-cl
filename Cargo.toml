@@ -14,3 +14,5 @@ vergen-pretty = { version = "2.0.0", features = ["color"] }
 
 [patch.crates-io]
 vergen-gix = { path = "../vergen/vergen-gix" }
+vergen-gitcl = { path = "../vergen/vergen-gitcl" }
+vergen-git2 = { path = "../vergen/vergen-git2" }

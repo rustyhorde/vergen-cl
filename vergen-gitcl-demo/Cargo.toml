@@ -22,7 +22,8 @@ vergen-pretty = { workspace = true }
 [build-dependencies]
 anyhow = { workspace = true }
 rustversion = { workspace = true }
-vergen-gitcl = { version = "2.0.0-beta.1", features = [
+vergen-gitcl = { version = "2.1.0-beta.1", features = [
+    "allow_remote",
     "build",
     "cargo",
     "cargo_metadata",

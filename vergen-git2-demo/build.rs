@@ -1,4 +1,4 @@
-use std::collections::BTreeMap;
+use std::{collections::BTreeMap, env::temp_dir};
 
 use anyhow::Result;
 use vergen_git2::{
@@ -16,10 +16,19 @@ pub fn main() -> Result<()> {
     let mut cargo = Cargo::all_cargo();
     _ = cargo.set_dep_kind_filter(Some(DependencyKind::Normal));
 
+    let blah = temp_dir().join("v_git2");
+    std::fs::create_dir_all(&blah)?;
+
+    let git2 = Git2::all()
+        .repo_path(blah)
+        .remote_url("https://github.com/rustyhorde/vergen-cl.git")
+        .describe(true, true, None)
+        .build();
+
     Emitter::default()
         .add_instructions(&Build::all_build())?
         .add_instructions(&cargo)?
-        .add_instructions(&Git2::all().describe(true, true, None).build())?
+        .add_instructions(&git2)?
         .add_instructions(&Rustc::all_rustc())?
         .add_instructions(&Sysinfo::all_sysinfo())?
         .add_custom_instructions(&Custom::default())?

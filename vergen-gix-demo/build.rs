@@ -16,7 +16,7 @@ pub fn main() -> Result<()> {
     let mut cargo = Cargo::all_cargo();
     _ = cargo.set_dep_kind_filter(Some(DependencyKind::Normal));
 
-    let blah = temp_dir().join("vcl");
+    let blah = temp_dir().join("v_gix");
     std::fs::create_dir_all(&blah)?;
 
     let gix = Gix::all()
