@@ -12,7 +12,7 @@ anyhow = "1.0.99"
 rustversion = "1.0.22"
 vergen-pretty = { version = "2.0.0", features = ["color"] }
 
-[patch.crates-io]
-vergen-gix = { path = "../vergen/vergen-gix" }
-vergen-gitcl = { path = "../vergen/vergen-gitcl" }
-vergen-git2 = { path = "../vergen/vergen-git2" }
+# [patch.crates-io]
+# vergen-gix = { path = "../vergen/vergen-gix" }
+# vergen-gitcl = { path = "../vergen/vergen-gitcl" }
+# vergen-git2 = { path = "../vergen/vergen-git2" }
