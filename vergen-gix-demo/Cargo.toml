@@ -10,7 +10,7 @@ license = "MIT OR Apache-2.0"
 name = "vergen-gix-demo"
 readme = "../README.md"
 repository = "https://github.com/rustyhorde/vergen-cl"
-version = "0.3.9"
+version = "0.3.10"
 
 [features]
 unstable = []
@@ -22,7 +22,7 @@ vergen-pretty = { workspace = true }
 [build-dependencies]
 anyhow = { workspace = true }
 rustversion = { workspace = true }
-vergen-gix = { version = "2.1.0-beta.4", features = [
+vergen-gix = { version = "2.1.0-beta.5", features = [
     "allow_remote",
     "build",
     "cargo",

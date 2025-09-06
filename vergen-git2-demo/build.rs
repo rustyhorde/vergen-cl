@@ -18,6 +18,7 @@ pub fn main() -> Result<()> {
 
     let git2 = Git2::all()
         .remote_tag("0.3.9")
+        .fetch_depth(200)
         .remote_url("https://github.com/rustyhorde/vergen-cl.git")
         .describe(true, true, None)
         .build();

@@ -18,6 +18,7 @@ pub fn main() -> Result<()> {
 
     let gitcl = Gitcl::all()
         .remote_tag("0.3.9")
+        .fetch_depth(300)
         .remote_url("https://github.com/rustyhorde/vergen-cl.git")
         .describe(true, true, None)
         .build();
