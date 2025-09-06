@@ -17,7 +17,7 @@ pub fn main() -> Result<()> {
     _ = cargo.set_dep_kind_filter(Some(DependencyKind::Normal));
 
     let git2 = Git2::all()
-        .remote_tag("0.3.2")
+        .remote_tag("0.3.9")
         .remote_url("https://github.com/rustyhorde/vergen-cl.git")
         .describe(true, true, None)
         .build();
